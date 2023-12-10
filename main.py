@@ -24,7 +24,7 @@ def heh_msg(message):
     photo = open("C:\\Users\lenovo\Downloads\\tony.jpg", 'rb')
     bot.send_photo(chat_id, photo)
 
-@bot.message_handler(commands=['/memes'])
+@bot.message_handler(commands=['memes'])
 def start_msg(message):
     bot.reply_to(message, "Уан Секонд")
     photo = open("C:\\Users\lenovo\Downloads\\Tony_meme.jpg", 'rb')
