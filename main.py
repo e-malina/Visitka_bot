@@ -11,7 +11,7 @@ chat_id = 5050226393
 @bot.message_handler(commands=['start'])
 def start_msg(message):
     bot.reply_to(message, f"Привет {message.from_user.first_name}, я Тони Старк, жми /help чтобы начать со мной общение")
-    photo = open("C:\\Users\lenovo\Downloads\\tryToni.jpg", 'rb')
+    photo = open("C:/Users/lenovo/Downloads/tryToni.jpg", 'rb')
     bot.send_photo(chat_id, photo)
 
 @bot.message_handler(commands=['help'])
@@ -25,20 +25,20 @@ def help_msg(message):
 @bot.message_handler(commands=['who'])
 def heh_msg(message):
     bot.reply_to(message, "Гений, миллиардер, плейбол, филантроп.")
-    photo = open("C:\\Users\lenovo\Downloads\\tony.jpg", 'rb')
+    photo = open("C:/Users/lenovo/Downloads/tony.jpg", 'rb')
     bot.send_photo(chat_id, photo)
 
 @bot.message_handler(commands=['memes'])
 def start_msg(message):
     bot.reply_to(message, "Уан Секонд")
-    photo = open("C:\\Users\lenovo\Downloads\\Tony_meme.jpg", 'rb')
+    photo = open("C:/Users/lenovo/Downloads/Tony_meme.jpg", 'rb')
     bot.send_photo(chat_id, photo)
 
 
 @bot.message_handler(commands = ['about'])
 def about_msg(message):
-    for key, value in hobby_list():
-        bot.reply_to(f"{key} - {value['hobby']}")
+    for key, value in hobby_list.items():
+        bot.reply_to(message, f"{key} - {value['hobby']}")
 
 @bot.message_handler(content_types = ['text'])
 def goodbye_msg(message):
