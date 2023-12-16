@@ -54,10 +54,10 @@ def about_msg(message):
 
 @bot.message_handler(content_types = ['text'])
 def goodbye_msg(message):
-    if message == 'пока' or 'прощай' or 'до свидания':
+    if message.text.lower() == 'пока' or message.text.lower() == 'прощай' or message.text.lower() == 'до свидания':
         bot.send_message(message.chat.id, "Всего хорошего, бывай")
 
-@bot.message_handler(content_type = ['text'])
+@bot.message_handler()
 def send_text(message):
     bot.send_message(message.chat.id, 'Чтобы мы поговрили как надо, следуй инструкциям которые я присылаю')
     bot.send_message(message.chat.id, 'введи что то что я умею распозновать, а то увы, наше общение здесь и закончится ')
